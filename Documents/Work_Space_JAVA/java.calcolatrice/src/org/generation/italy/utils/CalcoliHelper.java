@@ -8,6 +8,8 @@ public class CalcoliHelper {
 	private CalcoliHelper(){
 		
 	}
+	//somma intero e somma double con overload -> polimorfismo
+	
 	//numero Intero
 	public static int somma(int a, int b) {
 		return a+b;
@@ -25,7 +27,11 @@ public class CalcoliHelper {
 	
 	
 	public static int valoreAssoluto(int a) {
-		return a*-1;
+		if (a>=0) {
+			return a;
+		}else {
+			return -a;
+		}
 	}
 	
 	
@@ -48,7 +54,22 @@ public class CalcoliHelper {
 		return min;
 	}
 
-	
+	public static double potenza(double base, double esponente) {
+		double power = 1;
+		
+		if(esponente>0) {
+			for (int i = 0; i < esponente; i++) {
+				power = power * base;
+			}
+		}else {
+			for(int i=0; i< (esponente*-1);i++) {
+				power=power/base;
+			}
+		}
+		
+
+		return power;
+	}
 	
 	//numero double
 	public static double somma(double a, double b) {
